@@ -1,4 +1,4 @@
-# OpenTok.js Noise reduction
+# Noise reduction with Vonage Video API
 
 This sample application shows how to use a basic video application with the [Vonage noise reduction library]
 (https://www.npmjs.com/package/@vonage/noise-suppression/v/1.0.0-beta.2?activeTab=readme).
