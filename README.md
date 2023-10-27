@@ -9,4 +9,4 @@ This sample application shows how to use a basic video application with the [Von
 2. Run npm install
 3. Open index.html
 
-To be able to run the sample easily you can open public/index.html with Live server utility in VS code. If you need to test out of your local network you can use ngrok to expose the port of your local server
+To be able to test the sample easily you can open index.html with Live server utility in VS code. If you need to test out of your local network you can use ngrok to expose the port of your local server
