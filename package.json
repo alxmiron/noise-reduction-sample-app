@@ -1,8 +1,8 @@
 {
-  "name": "basic-video-transformer",
+  "name": "basic-noise-reduction",
   "version": "1.0.0",
   "type": "module",
-  "description": "This sample application shows how to use a basic video transformer",
+  "description": "This sample application shows how to reduce noise on Vonage Video API calls",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -12,10 +12,7 @@
   },
   "contributors": [
     {
-      "name": "Misha Behei"
-    },
-    {
-      "name": "Chris Pettet"
+      "name": "Javier Molina"
     }
   ],
   "license": "ISC",

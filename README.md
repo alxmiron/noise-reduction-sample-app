@@ -5,8 +5,17 @@ This sample application shows how to use a basic video application with the [Von
 
 ## Running the sample app
 
-1. Populate js/config.js
+### Running localy
+
+1. Populate .env as per .env.sample
 2. Run npm install
-3. Open index.html
+3. Run node index.js
+4. Expose the port the app is running on with ngrok.
+
+### Running on VCR
 
 To be able to test the sample easily you can open index.html with Live server utility in VS code. If you need to test out of your local network you can use ngrok to expose the port of your local server
+
+1. Populate neru.yml file as per neru.sample.yml
+2. Init a neru project
+3. Run neru deploy
