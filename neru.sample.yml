@@ -1,0 +1,22 @@
+project:
+  name: noise-suppresion
+instance:
+  name: dev
+  runtime: nodejs16
+  region: aws.euw1
+  application-id: 0f54d56a--9876-33e900c719fa
+  environment:
+    - name: VIDEO_API_API_KEY
+      value: '12323'
+    - name: 'VIDEO_API_API_SECRET'
+      value: '2323232'
+  capabilities:
+    - messaging-v1
+  entrypoint:
+    - node
+    - index.js
+debug:
+  name: debug
+  entrypoint:
+    - nodemon
+    - index.js

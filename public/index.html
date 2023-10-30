@@ -2,9 +2,9 @@
 <html>
   <head>
     <title>OpenTok Getting Started</title>
-    <link href="css/app.css" rel="stylesheet" type="text/css" />
+    <link crossorigin href="../css/app.css" rel="stylesheet" type="text/css" />
 
-    <script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
+    <script crossorigin src="https://static.opentok.com/v2/js/opentok.min.js"></script>
   </head>
 
   <body>
@@ -79,14 +79,11 @@
       }
     </style>
     <script>
-      // function onlyOne(checkbox) {
-      //   var checkboxes = document.getElementsByName('check');
-      //   checkboxes.forEach((item) => {
-      //     if (item !== checkbox) item.checked = false;
-      //   });
-      // }
     </script>
-    <script type="text/javascript" src="js/config.js"></script>
-    <script type="module" src="js/app.js"></script>
+    <!-- <script type="text/javascript" src="js/config.js"></script> -->
+    <script crossorigin type="module" defer src="../js/noiseSuppresion.js"></script>
+    <script crossorigin type="module" defer src="../js/mediaProcessor.js"></script>
+    <script crossorigin type="module" src="../js/app.js"></script>
+   
   </body>
 </html>
