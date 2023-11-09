@@ -25,7 +25,9 @@ async function suppressNoiseFromAudioStream(source) {
   try {
     processor = new MediaProcessor();
     transformer = new NoiseSuppressionTransformer();
-    await transformer.init({});
+    await transformer.init({
+      assetsDirBaseUrl: `${window.location.origin}/dist`,
+    });
     await processor.setTransformers([
       transformer,
       // my other audio transformers

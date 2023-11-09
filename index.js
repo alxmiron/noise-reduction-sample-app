@@ -2,14 +2,30 @@
 import path from 'path';
 import cors from 'cors';
 import express from 'express';
+import { neru, Assets } from 'neru-alpha';
 import bodyParser from 'body-parser';
 import { getCredentials, generateToken } from './server/opentok/index.js';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+
+const __dirname = path.dirname(__filename);
 
 const app = express(); // create express app
 // const opentok = require('./server/opentok');
 // app.use(cors());
 app.use(bodyParser.json());
 // app.use(express.static('public'));
+
+// app.get('/assets', async (req, res) => {
+//   try {
+//     const session = neru.createSession();
+//     const assets = new Assets(session);
+//     const fileData = await assets.generateLink('assets/');
+//     res.send(fileData);
+//   } catch (e) {
+//     res.send(e);
+//   }
+// });
 
 app.use(
   express.static('public', {
