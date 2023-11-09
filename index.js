@@ -16,17 +16,6 @@ const app = express(); // create express app
 app.use(bodyParser.json());
 // app.use(express.static('public'));
 
-// app.get('/assets', async (req, res) => {
-//   try {
-//     const session = neru.createSession();
-//     const assets = new Assets(session);
-//     const fileData = await assets.generateLink('assets/');
-//     res.send(fileData);
-//   } catch (e) {
-//     res.send(e);
-//   }
-// });
-
 app.use(
   express.static('public', {
     setHeaders: (res) => {
