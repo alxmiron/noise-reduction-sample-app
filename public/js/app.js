@@ -26,7 +26,10 @@ async function suppressNoiseFromAudioStream(source) {
     processor = new MediaProcessor();
     transformer = new NoiseSuppressionTransformer();
     await transformer.init({
-      assetsDirBaseUrl: `${window.location.origin}/dist`,
+      //uncomment the line below pointing to where the assets are stored and set disableWasmMultiThread to false
+      //to use multithreadding and improve performance
+      // assetsDirBaseUrl: `${window.location.origin}/dist`,
+      disableWasmMultiThread: true,
     });
     await processor.setTransformers([
       transformer,
