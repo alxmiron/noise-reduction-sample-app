@@ -21,7 +21,7 @@ toggle.addEventListener('click', function () {
   toggleNoiseReductor(transformer);
 });
 
-async function suppressNoiseFromAudioStream(source) {
+async function getNoiseSuppressionConnector() {
   try {
     processor = new MediaProcessor();
     transformer = new NoiseSuppressionTransformer();
@@ -35,14 +35,9 @@ async function suppressNoiseFromAudioStream(source) {
       transformer,
       // my other audio transformers
     ]);
-    const connector = new MediaProcessorConnector(processor);
-    const track = await connector.setTrack(source.getAudioTracks()[0]);
-    const output = new MediaStream();
-    output.addTrack(track);
-    return output;
+    return new MediaProcessorConnector(processor);
   } catch (e) {
     console.log('something went wrong');
-
     throw e;
   }
 }
@@ -79,12 +74,9 @@ const initializeSession = async () => {
     };
     session.subscribe(event.stream, 'subscriber', subscriberOptions, handleError);
   });
-  const stream = await OT.getUserMedia({ audio: true, video: true });
-  const noiseSuppresedStream = await suppressNoiseFromAudioStream(stream);
-  console.log(noiseSuppresedStream);
+  const noiseSuppressionConnector = await getNoiseSuppressionConnector();
 
-  const publisher = OT.initPublisher('publisher', { audioSource: noiseSuppresedStream.getAudioTracks()[0] }, handleError);
-
+  const publisher = OT.initPublisher('publisher', {}, handleError);
   // Connect to the session
   session.connect(token, (error) => {
     if (error) {
@@ -93,6 +85,7 @@ const initializeSession = async () => {
       // If the connection is successful, publish the publisher to the session
       // and transform stream
       session.publish(publisher);
+      publisher.setAudioMediaProcessorConnector(noiseSuppressionConnector);
     }
   });
 };
