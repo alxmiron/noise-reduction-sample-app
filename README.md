@@ -10,7 +10,11 @@ This sample application shows how to use a basic video application with the [Von
 1. Populate .env as per .env.sample
 2. Run npm install
 3. Run node index.js
-4. Expose the port the app is running on with ngrok.
+4. Expose the port the app is running on with ngrok to test over HTTPs.
+
+### Multithread.
+
+To improve performance it is recommended to run the sample app with multiple threads. For that you need to change [this flag](https://github.com/nexmo-se/noise-reduction-sample-app/blob/main/public/js/app.js#L32) and specify the `assetsDirBaseUrl` where you are hosting the resources. This application implements cross origin isolation as long as it runs on HTTPs.
 
 ### Running on VCR
 
