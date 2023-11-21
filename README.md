@@ -1,7 +1,7 @@
 # Noise reduction with Vonage Video API
 
 This sample application shows how to use a basic video application with the [Vonage noise reduction library]
-(https://www.npmjs.com/package/@vonage/noise-suppression/v/1.0.0-beta.2?activeTab=readme).
+(https://www.npmjs.com/package/@vonage/noise-suppression).
 
 ## Running the sample app
 
@@ -14,7 +14,7 @@ This sample application shows how to use a basic video application with the [Von
 
 ### Multithread.
 
-To improve performance it is recommended to run the sample app with multiple threads. For that you need to change [this flag](https://github.com/nexmo-se/noise-reduction-sample-app/blob/main/public/js/app.js#L32) and specify the `assetsDirBaseUrl` where you are hosting the resources. This application implements cross origin isolation as long as it runs on HTTPs.
+To improve performance it is recommended to run the sample app with WebAssembly multithreading. For that you need to change [this flag](https://github.com/nexmo-se/noise-reduction-sample-app/blob/main/public/js/app.js#L32) and specify the `assetsDirBaseUrl` where you are hosting the resources. This application implements cross origin isolation as long as it runs on HTTPs.
 
 ### Running on VCR
 
