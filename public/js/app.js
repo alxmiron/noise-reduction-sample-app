@@ -79,7 +79,9 @@ const initializeSession = async () => {
     };
     session.subscribe(event.stream, 'subscriber', subscriberOptions, handleError);
   });
-  const stream = await OT.getUserMedia({ audio: true, video: true });
+  const stream = await OT.getUserMedia({
+    noiseSuppression: false,
+  });
   const noiseSuppresedStream = await suppressNoiseFromAudioStream(stream);
   console.log(noiseSuppresedStream);
 
