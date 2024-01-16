@@ -62,7 +62,7 @@ app.get('/room/:room', (req, res) => {
   }
 });
 
-const serverPort = process.env.NERU_APP_PORT || 3001;
+const serverPort = process.env.SERVER_PORT || 3001;
 
 app.listen(serverPort, () => {
   console.log('server started on port', serverPort);
