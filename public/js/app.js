@@ -28,8 +28,8 @@ async function getNoiseSuppressionConnector() {
     await transformer.init({
       //uncomment the line below pointing to where the assets are stored and set disableWasmMultiThread to false
       //to use multithreadding and improve performance
-      // assetsDirBaseUrl: `${window.location.origin}/dist`,
-      disableWasmMultiThread: true,
+      assetsDirBaseUrl: `${window.location.origin}/dist`,
+      disableWasmMultiThread: false,
     });
     await processor.setTransformers([
       transformer,
