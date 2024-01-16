@@ -62,7 +62,7 @@ app.get('/room/:room', (req, res) => {
   }
 });
 
-const serverPort = process.env.SERVER_PORT || 3001;
+const serverPort = process.env.PORT || 3000;
 
 app.listen(serverPort, () => {
   console.log('server started on port', serverPort);
