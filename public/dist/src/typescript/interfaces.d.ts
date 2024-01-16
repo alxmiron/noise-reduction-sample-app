@@ -26,6 +26,7 @@ export interface NoiseSuppressionOptions {
      * Enable/disable  debug mode.
      * In debug mode, the transformer will :
      *  - compute latency.
+     *  - enable wav export
      */
     debug?: boolean;
 }
@@ -44,4 +45,16 @@ export interface WasmDtlnTransformer {
     getSampleRate: () => number;
     getLatencyNs: () => number;
     getInternalResampleSupported: () => boolean;
+    enableWavExport: () => void;
+    closeWav: () => void;
+    getWav: () => Int8Array;
+}
+/**
+ * @internal
+ */
+export interface WasmWavExporterTransformer {
+    push: (samplesPerChannel: number, sample_rate_hz: number, number_of_channels: number) => number;
+    close: () => void;
+    getInputFrame: (size: number) => Int16Array;
+    getWav: () => Int8Array;
 }
