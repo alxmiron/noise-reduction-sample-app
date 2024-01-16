@@ -26,6 +26,6 @@
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "neru-alpha": "^5.0.1",
-    "opentok": "2.14.3"
+    "opentok": "^2.17.0"
   }
 }
