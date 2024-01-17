@@ -24,6 +24,10 @@ export declare class NoiseSuppressionTransformer extends Emittery<TransformerEve
      */
     init(options?: NoiseSuppressionOptions): Promise<void>;
     /**
+     * @internal
+     */
+    getWav(): string;
+    /**
      * Tell to the transformer what preprocessing are applied before reaching this transformer
      */
     setAudioOptions(echo_cancellation: boolean, auto_gain_control: boolean, noise_suppression: boolean, stereo_swapping: boolean, highpass_filter: boolean): void;

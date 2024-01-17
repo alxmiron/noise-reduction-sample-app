@@ -14,6 +14,10 @@ export declare class ProcessorWorker extends Emittery<EventDataMap> {
     disable(): void;
     terminate(): Promise<void>;
     /**
+     * @internal
+     */
+    getWav(): string;
+    /**
      * Return the latency of the transformation
      * The latency will be computed only if the options debug flag is true
      * Otherwise, will return 0;

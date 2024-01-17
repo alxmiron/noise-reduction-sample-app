@@ -30,4 +30,8 @@ export declare class ProcessorMain extends Emittery<EventDataMap> implements Med
      * Delete the noise suppression
      */
     close(): Promise<void>;
+    /**
+     * @internal
+     */
+    getWav(): Promise<string>;
 }

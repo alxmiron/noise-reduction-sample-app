@@ -42,4 +42,8 @@ export declare class VonageNoiseSuppression extends Emittery<EventDataMap> {
      * @returns latency
      */
     getWasmLatencyNs(): Promise<number>;
+    /**
+     * @internal
+     */
+    getWav(): Promise<string>;
 }
